@@ -4,8 +4,7 @@
   "description": "Implementation of circular singly linked list and array-based list",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "start": "node demo.js"
+    "test": "jest"
   },
   "devDependencies": {
     "jest": "^29.0.0"
