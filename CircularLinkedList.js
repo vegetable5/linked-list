@@ -102,37 +102,39 @@ class CircularLinkedList {
     deleteAll(element) {
         if (this.size === 0) return;
 
-        let current = this.head;
-        let prev = this.tail;
-        let count = 0;
+        while (this.size > 0 && this.head.data === element) {
+            if (this.size === 1) {
+                this.head = null;
+                this.tail = null;
+                this.size = 0;
+                return;
+            }
 
-        do {
+            this.head = this.head.next;
+            this.tail.next = this.head;
+            this.size--;
+        }
+
+        if (this.size === 0) return;
+
+        let current = this.head.next;
+        let prev = this.head;
+
+        while (current !== this.head) {
             if (current.data === element) {
-                if (this.size === 1) {
-                    this.head = null;
-                    this.tail = null;
-                    this.size--;
-                    return;
-                }
-
-                if (current === this.head) {
-                    this.head = current.next;
-                    this.tail.next = this.head;
-                } else if (current === this.tail) {
+                if (current === this.tail) {
                     this.tail = prev;
                     this.tail.next = this.head;
                 } else {
                     prev.next = current.next;
                 }
-
-                this.size--;
                 current = current.next;
+                this.size--;
             } else {
                 prev = current;
                 current = current.next;
             }
-            count++;
-        } while (current !== this.head && count <= this.size + 10);
+        }
     }
 
     get(index) {
