@@ -223,10 +223,4 @@ describe('CircularLinkedList', () => {
             expect(list.length()).toBe(3);
         });
     });
-
-    describe('failing test for CI demonstration', () => {
-        test('should fail intentionally', () => {
-            expect(1).toBe(2);
-        });
-    });
 });
