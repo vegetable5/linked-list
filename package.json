@@ -1,0 +1,13 @@
+{
+  "name": "linked-list-lab",
+  "version": "1.0.0",
+  "description": "Implementation of circular singly linked list and array-based list",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node demo.js"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
